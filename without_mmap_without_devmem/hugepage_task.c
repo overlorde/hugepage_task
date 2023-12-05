@@ -17,7 +17,6 @@
 #define ALLOCATION_SIZE 32
 #define TOTAL_ALLOCATION (2*1024*1024/32)
 #define START_ADDRESS 0x100000000
-// no need for start_address here
 #define HUGEPAGE_TYPE_A 1
 #define HUGEPAGE_TYPE_B 2
 
@@ -197,7 +196,6 @@ int main()
 
     // experiment physical ram
 
-    // Specify the file path
     object_allocation_file("output_0", ALLOCATION_SIZE, hparray, 0, 1);
     object_allocation_file("output_1", ALLOCATION_SIZE, hparray, 2, 3);
     object_allocation_file("output_2", ALLOCATION_SIZE, hparray, 4, 5);

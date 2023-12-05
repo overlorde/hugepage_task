@@ -31,8 +31,7 @@ typedef struct{
 void print_memory_info() {
     FILE *fp = fopen("/proc/self/status", "r");
     if (fp != NULL) {
-        char buffer[256];  // Adjust the buffer size as needed
-        // Search for the VmRSS field in /proc/self/status
+        char buffer[256];
         while (fgets(buffer, sizeof(buffer), fp) != NULL) {
             int rss;
             if (sscanf(buffer, "VmRSS: %d", &rss) == 1) {
@@ -186,7 +185,6 @@ int main()
     pid_t pid = getpid();
 
 
-    // Print PID for reference
     printf("Program PID: %d\n", pid);
     // Open hugetlbfs file for memory mapping
     int fd_1 = open("/mnt/hugetlbfs/hugepage", O_CREAT | O_RDWR, 0755);

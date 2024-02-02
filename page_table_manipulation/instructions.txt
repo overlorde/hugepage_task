@@ -4,12 +4,6 @@ sudo rmmod page_table_example
 
 make clean
 
-
-    //unsigned long address = 0x12345678; // An example address
-    // Modify the PTE - Be extremely cautious with what you do here
-    //temp_pte_1 = *pte_1;
-    // For example, you might clear the _PAGE_PRESENT flag (this is just an example, not a recommendation)
-
     //printk(KERN_INFO "debug 6 Modify Page Table Example Module\n");
     //pte_clear(current->mm, address_1, pte_1);
 
@@ -23,24 +17,3 @@ make clean
     then memcpy to the other hugepage
     then unmap and then map fd2 with the first address of the fd1, addr_1
     use map_fixed to map the hugepage to the same address as the first hugepage
-
-
-
-
-
-
-    // Allocate memory for an integer in kernel space
-    int_ptr_1 = kmalloc(sizeof(int), GFP_KERNEL);
-    if (!int_ptr_1) {
-        printk(KERN_INFO "Memory allocation failed\n");
-        return -ENOMEM;
-    }
-
-    int_ptr_2 = kmalloc(sizeof(int), GFP_KERNEL);
-    if (!int_ptr_2) {
-        printk(KERN_INFO "Memory allocation failed\n");
-        return -ENOMEM;
-    }
-
-    *int_ptr_1 = 123;
-    *int_ptr_2 = 321;

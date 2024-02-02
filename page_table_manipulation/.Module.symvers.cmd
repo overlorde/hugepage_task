@@ -1,0 +1,1 @@
+cmd_/home/dante/work/task_prof/hugetable_task/page_table_manipulation/Module.symvers :=  sed 's/ko$$/o/'  /home/dante/work/task_prof/hugetable_task/page_table_manipulation/modules.order | scripts/mod/modpost  -a   -N -o /home/dante/work/task_prof/hugetable_task/page_table_manipulation/Module.symvers -n -e -i Module.symvers -T - 

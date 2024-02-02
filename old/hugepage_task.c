@@ -186,7 +186,7 @@ int main()
 
 
     printf("Program PID: %d\n", pid);
-    // Open hugetlbfs file for memory mapping
+    // After mounting the hugetable file system, Open hugetlbfs file for memory mapping
     int fd_1 = open("/mnt/hugetlbfs/hugepage", O_CREAT | O_RDWR, 0755);
     if (fd_1 < 0) {
         perror("open");
@@ -220,7 +220,7 @@ int main()
     }
     getRSS();
 
-    // experiment physical ram
+    // physical ram
 
     int mem_fd = open("/dev/mem", O_RDWR | O_SYNC);
     if (mem_fd == -1) {
